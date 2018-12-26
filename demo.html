@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title></title>
+	<script src="http://m.ev123.com/include/jquery-1.7.1.min.js"></script>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<style>
+		#myVideo{display: none;}
+		.mediaOperate{margin: 20px;}
+		.mediaOperate a{
+			float: left;
+			font-size: 14px;
+			text-decoration: none;
+			margin-right: 10px;
+			color: #fff;
+			line-height: 14px;
+			user-select: none;
+		}
+		.mediaOperate span{
+			display: block;
+			float: left;
+			line-height: 14px;
+			color: #fff;
+			user-select: none;
+		}
+		.mediaOperate .planMap{
+			position: relative;
+			width: 500px;
+			height: 10px;
+			background-color: #E6E6E6;
+			margin: 2px 10px;
+		}
+		.mediaOperate .planMap em{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 10px;
+			background-color: #03a9f4;
+		}
+		.mediaOperate .planMap em::after{
+			content: '';
+			width: 5px;
+			height: 14px;
+			position: absolute;
+			right: 0;
+			top: -2px;
+			background-color: #EBEDF4;
+		}
+	</style>
+	<script src="./mediaPlay.js"></script>
+	<script>
+		$(function(){
+			$('.mediaOperate').mediaPlay({'myVideo':'myVideo'})
+			$('.mediaOperate').pillarMap()
+		})
+	</script>
+</head>
+<body bgColor="#87b1c5">
+	<canvas id="canvas" width="1000" height="300"></canvas>
+	<audio src="audio.mp3" id="myVideo" controls preload></audio>
+	<div class="mediaOperate">
+		<a href="javascript:;" class="play">播放</a>
+		<a href="javascript:;" class="pause">停止</a>
+		<span class="startTime">00:00:00</span>
+		<span class="planMap">
+			<em class="state"></em>
+		</span>
+		<span class="endTime">00:00:00</span>
+	</div>
+</body>
+</html>
+
